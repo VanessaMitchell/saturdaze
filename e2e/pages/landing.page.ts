@@ -69,6 +69,10 @@ export class LandingPage extends BasePage {
     return this.heroPreview().locator(".block");
   }
 
+  previewClocks(): Locator {
+    return this.previewBlocks().locator(".block__clock");
+  }
+
   get how(): Locator {
     return this.main.locator(".how");
   }

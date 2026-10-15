@@ -281,7 +281,7 @@ export function blockIcon(kind: BlockKind, title: string): string {
   }
 }
 
-/** "Swim 9:00" for every block a regenerate keeps: commitments and locks. */
+/** "Swim 09:00" for every block a regenerate keeps: commitments and locks. */
 export function dayKeeping(blocks: readonly ItineraryBlockDto[]): string[] {
   return blocks
     .filter((b) => b.kind !== 'Drive' && (b.kind === 'Commitment' || b.isLocked))

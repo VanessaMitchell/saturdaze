@@ -21,7 +21,7 @@ describe('ErrandAddedDialog', () => {
             placement: {
               description: 'Costco run',
               day: 'Sunday',
-              time: '9:15',
+              time: '09:15',
               endTime: '10:00',
               blockId: 'b-costco',
             },
@@ -36,7 +36,7 @@ describe('ErrandAddedDialog', () => {
 
   it('says where the planner put the errand', () => {
     expect(host.querySelector('.dialog__title')?.textContent?.trim()).toBe(
-      'Added to Sunday at 9:15',
+      'Added to Sunday at 09:15',
     );
     expect(host.querySelector('.dialog__sub')?.textContent?.trim()).toBe(
       'It sits around what was already planned.',
@@ -44,7 +44,7 @@ describe('ErrandAddedDialog', () => {
     const rows = Array.from(host.querySelectorAll('sd-list-item'));
     expect(rows.map((r) => r.querySelector('.list__title')?.textContent?.trim())).toEqual([
       'Costco run',
-      'Sunday · 9:15 to 10:00',
+      'Sunday · 09:15 to 10:00',
     ]);
     expect(rows.map((r) => r.querySelector('.list__sub')?.textContent?.trim())).toEqual([
       'What',

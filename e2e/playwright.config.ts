@@ -14,11 +14,11 @@ import { defineConfig, devices } from "@playwright/test";
  *     `Saturdaze__CuratedPhotos__PublicOrigin=https://images.example.com` and
  *     `Saturdaze__Images__AllowedOrigins__0=https://images.example.com`.
  *
- *   - The v2 mocks (docs/mocks-v2) are served on http://localhost:5173 by
+ *   - The v2 mocks (docs/mocks) are served on http://localhost:5173 by
  *     `http-server` when SD_BASELINE=1. Visual baselines are captured from
  *     them once with `npm run baseline` and committed. Subsequent runs
  *     compare the Angular implementation against those baselines
- *     pixel-by-pixel. (`docs/mocks-v2/.verify.mjs` self-serves on :5180, so
+ *     pixel-by-pixel. (`docs/mocks/.verify.mjs` self-serves on :5180, so
  *     the two never collide.)
  *
  * Snapshot path convention: tests under `tests/visual/` use
@@ -76,7 +76,7 @@ export default defineConfig({
   webServer: isBaselineCapture
     ? {
         command:
-          "npx http-server ../docs/mocks-v2 -p 5173 -c-1 --cors --silent",
+          "npx http-server ../docs/mocks -p 5173 -c-1 --cors --silent",
         url: "http://localhost:5173/index.html",
         reuseExistingServer: !process.env.CI,
         timeout: 30_000,

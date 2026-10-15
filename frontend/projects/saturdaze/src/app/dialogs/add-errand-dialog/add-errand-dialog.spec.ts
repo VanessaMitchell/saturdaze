@@ -9,7 +9,7 @@ import { AddErrandDialog } from './add-errand-dialog';
 const PLACEMENT: ErrandPlacement = {
   description: 'Costco run',
   day: 'Sunday',
-  time: '9:15',
+  time: '09:15',
   endTime: '10:00',
   blockId: 'b-costco',
 };

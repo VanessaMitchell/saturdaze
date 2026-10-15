@@ -5,7 +5,7 @@ import type { EventCard } from 'components';
 export const Default: StoryObj<EventCard & { title: string }> = {
   args: {
     title: 'Terre Bleu Lavender Bloom Opening',
-    meta: 'Milton · 10am to 5pm',
+    meta: 'Milton · 10:00 to 17:00',
     date: '2026-05-17',
     mon: '',
     day: '',

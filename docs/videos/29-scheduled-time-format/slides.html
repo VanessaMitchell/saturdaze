@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video 29 Slides</title>
+<link rel="stylesheet" href="../assets/slides.css">
+</head>
+<body data-video-number="29" data-video-title="Scheduled times that read the same everywhere" data-parts="Introduction|What went wrong|The one rule|The shared formatter|Where it appears|Before and after|Verification|Recap">
+
+<section id="title" data-part="0">
+  <div class="kicker">Product consistency · Video 29</div>
+  <h1>Scheduled times, one format</h1>
+  <p class="lead">Zero-padded local clocks, readable ranges, explicit UTC timestamps</p>
+</section>
+
+<section id="problem" data-part="1" data-cue="Before this change, the same family could see">
+  <h2>One schedule, several styles</h2>
+  <div class="cols">
+    <div class="card"><h3>Before</h3><p class="lead">9:00</p><p>9:00pm</p><p>9:00 to 10:00pm</p></div>
+    <div class="card"><h3>After</h3><p class="lead">09:00</p><p>17:00</p><p>09:00 to 10:00</p></div>
+  </div>
+</section>
+
+<section id="rule" data-part="2" data-cue="The content rule is simple:">
+  <h2>Four display rules</h2>
+  <div class="cols">
+    <div class="card"><h3>Local clock</h3><p class="lead">09:05</p><p>Zero-padded, 24-hour</p></div>
+    <div class="card"><h3>Same-day range</h3><p class="lead">09:05 to 13:00</p><p>“to”, not an en dash</p></div>
+    <div class="card"><h3>Date and clock</h3><p class="lead">Sat 20 Jun · 14:00</p><p>Middle dot separates each date and time</p></div>
+    <div class="card"><h3>Admin timestamp</h3><p class="lead">2026-10-06 14:02 UTC</p><p>UTC, never local conversion</p></div>
+  </div>
+</section>
+
+<section id="formatter" data-part="3" data-cue="The shared formatter lives in">
+  <h2>One formatter, shared projections</h2>
+  <pre class="code tight" data-lang="ts" data-mark="3,4,8">export function hhmm(timeOnly: string): string {
+  const [h, m] = timeOnly.split(':');
+  return `${String(Number(h)).padStart(2, '0')}:${m ?? '00'}`;
+}
+
+export function timeRange(start: string, end: string): string {
+  return `${hhmm(start)} to ${hhmm(end)}`;
+}</pre>
+  <p class="small"><code>frontend/projects/api/src/lib/api/format.ts</code> · display only; schedule data is unchanged.</p>
+</section>
+
+<section id="surfaces" data-part="4" data-cue="Event submissions use the same range for a single date.">
+  <h2>Same rule across surfaces</h2>
+  <div class="cols">
+    <div class="card"><h3>Event submission</h3><pre class="code tight" data-lang="ts">return `${formatEventDate(startDate)} · ${timeRange(startTime, endTime)}`;</pre><p>Cross-day events keep a date · clock pair on each side.</p></div>
+    <div class="card"><h3>Admin audit</h3><pre class="code tight" data-lang="ts">return utcStamp(iso);</pre><p>UTC getters make audit timestamps independent of the viewer's time zone.</p></div>
+  </div>
+  <p class="small">Weekend · family · dialogs · errands · events · restaurants · admin</p>
+</section>
+
+<section id="before" data-part="5" data-cue="Here is the checked-in production build before the change." data-clip="clips/before.mp4" data-clip-delay="1">
+  <aside class="clip-notes">
+    <h3>Before</h3>
+    <ul>
+      <li>Same landing preview and schedule</li>
+      <li>Single-digit hours are unpadded</li>
+      <li>Production build from the checked-in baseline</li>
+    </ul>
+  </aside>
+</section>
+
+<section id="after" data-part="5" data-cue="Now the updated production build shows the same schedule in the same place." data-clip="clips/after.mp4" data-clip-delay="1">
+  <aside class="clip-notes">
+    <h3>After</h3>
+    <ul>
+      <li>09:00 · 08:30 · 09:15</li>
+      <li>Same activities, order and durations</li>
+      <li>Only the displayed clock format changes</li>
+    </ul>
+  </aside>
+</section>
+
+<section id="checks" data-part="6" data-cue="The formatter and projections have focused unit coverage,">
+  <h2>Check the visible behavior</h2>
+  <ul>
+    <li>Formatter and projection unit tests</li>
+    <li>Landing acceptance at mobile, tablet and desktop</li>
+    <li>Dialog gallery range assertions</li>
+    <li>L2-134 covers the format and supported widths</li>
+  </ul>
+</section>
+
+<section id="recap" data-part="7" data-cue="Keep the rule small.">
+  <h2>Things to remember</h2>
+  <div class="recap">
+    <ul>
+      <li>Local schedule: zero-padded 24-hour clock</li>
+      <li>Same day: “to” between clocks</li>
+      <li>Date and clock: middle dot</li>
+      <li>Admin: explicit UTC</li>
+    </ul>
+  </div>
+</section>
+
+<script src="../assets/slides.js"></script>
+</body>
+</html>

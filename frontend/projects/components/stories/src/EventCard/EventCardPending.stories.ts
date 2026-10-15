@@ -9,7 +9,7 @@ export const Pending: StoryObj<EventCard> = {
         style="max-width: 360px"
         muted
         title="Port Credit Buskerfest"
-        meta="Lakeshore Rd · Sat 2pm to 9pm"
+        meta="Lakeshore Rd · Sat 14:00 to 21:00"
         date="2026-06-20"
         url="https://example.com/port-credit-buskerfest-2026"
       >

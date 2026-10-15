@@ -33,6 +33,20 @@ test.describe("Landing", () => {
     await expect(l.heroPreview().locator(".block__actions")).toHaveCount(0);
   });
 
+  // Acceptance Test
+  // Traces to: L2-134
+  // Description: Landing preview schedule uses zero-padded 24-hour clocks.
+  test("the preview uses zero-padded 24-hour schedule clocks", async ({ pages }) => {
+    await expect(pages.landing.previewClocks()).toHaveText([
+      "09:00",
+      "10:30",
+      "11:00",
+      "08:30",
+      "09:15",
+      "10:30",
+    ]);
+  });
+
   test("'How it works' lists three numbered steps", async ({ pages }) => {
     const l = pages.landing;
     await expect(l.how.locator(".how__title")).toHaveText("How a weekend comes together");

@@ -33,7 +33,7 @@ export const Locked: StoryObj<Day> = {
           (lockToggle)="setLocked($event)"
           (regenerate)="regenerate()"
         >
-          <sd-block time="8:30" duration="45m" icon="home" title="Pancakes at home" subtitle="Mae flips, Eli pours" />
+          <sd-block time="08:30" duration="45m" icon="home" title="Pancakes at home" subtitle="Mae flips, Eli pours" />
           <sd-block commitment time="10:30" duration="75m" icon="home" title="Church" subtitle="Every Sunday · locked in">
             <sd-chip slot="chips" tone="accent"><sd-icon name="lock" [size]="13" [stroke]="2" />Commitment</sd-chip>
           </sd-block>

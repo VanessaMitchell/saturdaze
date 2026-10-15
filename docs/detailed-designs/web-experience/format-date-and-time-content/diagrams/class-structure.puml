@@ -1,0 +1,18 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName Arial
+skinparam ArrowColor #344054
+skinparam class { BorderColor #344054 FontColor #101828 BackgroundColor #F9FAFB }
+title Class structure — Format date and time content
+class Format { +hhmm(timeOnly: string): string\n+timeRange(start: string, end: string): string }
+class FamilyPresentation { +commitmentSubtitle(commitment): string }
+class WeekendProjection { +toBlockRow(block): BlockRow }
+class EventSubmissionsService { +submissionWhen(dto): string }
+class AdminAuditService { +utcStamp(iso: string): string }
+FamilyPresentation ..> Format : uses
+WeekendProjection ..> Format : uses
+EventSubmissionsService ..> Format : uses
+AdminAuditService ..> Format : aligns with
+@enduml

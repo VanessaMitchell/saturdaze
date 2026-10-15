@@ -48,7 +48,7 @@ export function commitmentDayLabel(dayOfWeek: DayOfWeek): string {
   return `${dayOfWeek}s`;
 }
 
-/** "Saturdays · 9:00 to 10:00" / "Saturdays · 5:00 to 6:00pm". */
+/** "Saturdays · 09:00 to 10:00" / "Saturdays · 17:00 to 18:00". */
 export function commitmentSubtitle(commitment: Omit<CommitmentLike, 'title'>): string {
   return `${commitmentDayLabel(commitment.dayOfWeek)} · ${timeRange(
     commitment.startTime,
@@ -89,7 +89,7 @@ export function membersSummary(members: readonly MemberLike[]): string {
   return parts.length > 0 ? parts.join(' · ') : 'Nobody added yet';
 }
 
-/** "Swim lessons Sat 9:00 · Church Sun 10:30" — the "Planned around" anchors line. */
+/** "Swim lessons Sat 09:00 · Church Sun 10:30" — the "Planned around" anchors line. */
 export function commitmentsSummary(commitments: readonly CommitmentLike[]): string {
   if (commitments.length === 0) return 'Add swim, church or anything fixed';
   return commitments

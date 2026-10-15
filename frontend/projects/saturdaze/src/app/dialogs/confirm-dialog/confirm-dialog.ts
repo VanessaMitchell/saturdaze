@@ -12,7 +12,7 @@ export interface ConfirmDialogData {
   readonly title: string;
   /** Supporting line under the title. */
   readonly body?: string;
-  /** Optional note block in the body ("Keeping: Swim 9:00 · …"). */
+  /** Optional note block in the body ("Keeping: Swim 09:00 · …"). */
   readonly well?: {
     readonly icon?: string;
     readonly title?: string;

@@ -13,7 +13,7 @@ import { defineConfig, devices } from "@playwright/test";
  * Same two-server switch as the main config:
  *   - default: the Angular dev server on :4200 (app under audit). Guarded
  *     routes need the API on :5100 — run `eng/Start-FreshStack.ps1`.
- *   - SD_BASELINE=1: `http-server` serves docs/mocks-v2 on :5173, auditing
+ *   - SD_BASELINE=1: `http-server` serves docs/mocks on :5173, auditing
  *     the mocks themselves at the same five widths (no auth, no backend).
  *
  * The five widths straddle every layout regime of the v2 design: 320
@@ -64,7 +64,7 @@ export default defineConfig({
   webServer: isBaselineCapture
     ? {
         command:
-          "npx http-server ../docs/mocks-v2 -p 5173 -c-1 --cors --silent",
+          "npx http-server ../docs/mocks -p 5173 -c-1 --cors --silent",
         url: "http://localhost:5173/index.html",
         reuseExistingServer: !process.env.CI,
         timeout: 30_000,

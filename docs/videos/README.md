@@ -46,6 +46,12 @@ Six videos on Saturdaze Admin, the second web application that curates the catal
 | --- | --- | --- | --- |
 | 18 | [How account emails are drafted](18-how-account-emails-are-drafted/README.md) | ~7.1 min | Verification and reset links as built: random tokens stored as SHA-256 hashes, single use via `ConsumedAtUtc`, no account leak, `DevDelivery` and `devToken`; no email provider yet (G01). |
 
+## Product formatting
+
+| # | Video | Runtime | What you learn |
+| --- | --- | --- | --- |
+| 29 | [Scheduled times that read the same everywhere](29-scheduled-time-format/README.md) | ~4.9 min | One zero-padded 24-hour format across local schedules, date/time labels and admin UTC timestamps; before and after in the production landing preview. |
+
 ## Design drift series
 
 | # | Video | Runtime | What you learn |

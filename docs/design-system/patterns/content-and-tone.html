@@ -160,7 +160,7 @@
               <div class="dialog__body">
                 <div class="well well--accent">
                   <svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>
-                  <div><p class="well__title">Keeping on Saturday</p><p class="well__body">Swim 9:00 · Workout 5:00 · Bath and books 8:00</p></div>
+                  <div><p class="well__title">Keeping on Saturday</p><p class="well__body">Swim 09:00 · Workout 17:00 · Bath and books 20:00</p></div>
                 </div>
               </div>
               <div class="dialog__actions">
@@ -237,8 +237,8 @@
       </table></div>
       <h3>Both themes</h3>
       <div class="ds-themes">
-        <div data-theme="light"><div class="well well--accent"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><div><p class="well__title">Keeping</p><p class="well__body">Swim 9:00 · Church 10:30 · Workout 5:00</p></div></div></div>
-        <div data-theme="dark"><div class="well well--accent"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><div><p class="well__title">Keeping</p><p class="well__body">Swim 9:00 · Church 10:30 · Workout 5:00</p></div></div></div>
+        <div data-theme="light"><div class="well well--accent"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><div><p class="well__title">Keeping</p><p class="well__body">Swim 09:00 · Church 10:30 · Workout 17:00</p></div></div></div>
+        <div data-theme="dark"><div class="well well--accent"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><div><p class="well__title">Keeping</p><p class="well__body">Swim 09:00 · Church 10:30 · Workout 17:00</p></div></div></div>
       </div>
     </section>
 
@@ -286,8 +286,8 @@
         <tbody>
           <tr><td>Date</td><td>17 May · Sat 20 Jun · 10 – 11 May (year only when it is not this year)</td><td>May 17th, 05/17, Saturday, June 20th</td></tr>
           <tr><td>Weekend range</td><td>17 – 18 May (spaced en dash)</td><td>17-18 May, May 17 to May 18</td></tr>
-          <tr><td>Timeline clock</td><td>9:00 · 11:30 (the day gives the half)</td><td>09:00 AM</td></tr>
-          <tr><td>Time range in text</td><td>2 to 9pm · 10am to 2pm · Saturday 9:00 to 10:00</td><td>2:00 PM – 9:00 PM</td></tr>
+          <tr><td>Scheduled local time</td><td>09:00 · 11:30 (zero-padded 24-hour clock)</td><td>9:00 · 6:30 PM</td></tr>
+          <tr><td>Time range in text</td><td>14:00 to 21:00 · Saturday 09:00 to 10:00</td><td>2pm to 9pm · 2:00 to 9:00pm</td></tr>
           <tr><td>Duration</td><td>45 min · 1 h 36 min; compact on the timeline: 30m, 2h</td><td>45 minutes long, 1.6 hrs</td></tr>
           <tr><td>Drive</td><td>45 min drive (time, not distance)</td><td>38 km</td></tr>
           <tr><td>Weather</td><td>22° / 14° (high / low, Celsius, no C)</td><td>22°C - 14°C</td></tr>
@@ -297,7 +297,7 @@
           <tr><td>File size</td><td>10 MB · 412 KB</td><td>10mb</td></tr>
         </tbody>
       </table></div>
-      <p>The middle dot (<code>·</code>) separates facts in meta lines; it has a space either side. The mocks still mix "2:00 to 9:00pm" and "2pm to 9pm"; use the second.</p>
+      <p>The middle dot (<code>·</code>) separates facts in meta lines; it has a space either side. Local scheduled times use a zero-padded 24-hour clock, and time ranges use "to" between both clocks.</p>
       <h3>Error and confirmation formulas</h3>
       <ul>
         <li><b>Error</b>: [what did not happen or is wrong] + [how to fix it]. "That file is not a JPG, PNG or WebP image." "Enter an age from 0 to 120." No "Error:", no codes in the message, no "you failed to".</li>
@@ -324,7 +324,7 @@
         <li><a href="../../mocks/pages/weekend.empty.html">pages/weekend.empty</a>, <a href="../../mocks/pages/past.empty.html">pages/past.empty</a>, <a href="../../mocks/pages/sign-in.html">pages/sign-in</a>: empty and error copy.</li>
         <li><a href="../../mocks/pages/admin.activity.html">pages/admin.activity</a>: admin timestamps.</li>
       </ul>
-      <p>Meta and chips keep the 12px minimum. Inconsistencies found in the mocks' copy: time ranges written three ways ("2:00 to 9:00pm", "2pm to 9pm", "10:00am to 2:00pm") and two admin timestamp formats ("6 Oct 2026, 04:10 UTC" on ingestion skips, "2026-10-06 14:02 UTC" on the activity log). This page picks one of each.</p>
+      <p>Meta and chips keep the 12px minimum. Administrative timestamps use an absolute UTC value in "YYYY-MM-DD HH:mm UTC" format.</p>
     </section>
 
     <footer class="ds-footer"><span>Saturdaze design system · extracted from <a href="../../mocks/index.html">docs/mocks</a></span><a href="#top">Back to top</a></footer>

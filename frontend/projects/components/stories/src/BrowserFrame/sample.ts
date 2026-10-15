@@ -2,7 +2,7 @@
 export const MINI_WEEKEND_TEMPLATE = `
   <div class="mini">
     <sd-day title="Saturday" meta="17 May · 22° / 14°" weather="sun" [actions]="false">
-      <sd-block time="9:00" duration="60m" icon="bike" title="Swim lessons" subtitle="Every Saturday" commitment readonly>
+      <sd-block time="09:00" duration="60m" icon="bike" title="Swim lessons" subtitle="Every Saturday" commitment readonly>
         <sd-chip slot="chips" tone="accent"><sd-icon name="lock" [size]="13" [stroke]="2" />Commitment</sd-chip>
       </sd-block>
       <sd-block time="10:30" duration="45m" icon="car" title="Drive to Terre Bleu" drive readonly />
@@ -12,7 +12,7 @@ export const MINI_WEEKEND_TEMPLATE = `
       <sd-block time="13:00" duration="75m" icon="fork" title="Lunch at La Marina" subtitle="Patio · 3 of 4 votes" readonly />
     </sd-day>
     <sd-day title="Sunday" meta="18 May · 18° / 12°" weather="cloud" [actions]="false">
-      <sd-block time="9:15" duration="45m" icon="bag" title="Costco run" subtitle="Paper towels, bread" errand readonly>
+      <sd-block time="09:15" duration="45m" icon="bag" title="Costco run" subtitle="Paper towels, bread" errand readonly>
         <sd-chip slot="chips" tone="indoor">Errand</sd-chip>
       </sd-block>
       <sd-block time="10:30" duration="75m" icon="pin" title="Church" subtitle="Every Sunday" commitment readonly>

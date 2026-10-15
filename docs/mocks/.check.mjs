@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// docs/mocks-v2/.check.mjs — static lint for the v2 mock set.
+// docs/mocks/.check.mjs — static lint for the v2 mock set.
 //
-//   node docs/mocks-v2/.check.mjs        (any cwd; no dependencies; < 1s)
+//   node docs/mocks/.check.mjs           (any cwd; no dependencies; < 1s)
 //
 // Prints one line per finding as `file:line  message`, grouped under a
 // heading per check, then `check: N finding(s)`. Exit 1 when N > 0.
@@ -24,7 +24,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { resolve, dirname, join, relative, basename, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const ROOT = dirname(fileURLToPath(import.meta.url)); // docs/mocks-v2
+const ROOT = dirname(fileURLToPath(import.meta.url)); // docs/mocks
 const REPO = resolve(ROOT, "..", "..");
 const PAGES_DIR = join(ROOT, "pages");
 const F = {

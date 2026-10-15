@@ -9,7 +9,7 @@ export interface ErrandAddedDialogData {
 }
 
 /**
- * D9 — "Added to Sunday at 9:15": where the planner put the errand.
+ * D9 — "Added to Sunday at 09:15": where the planner put the errand.
  */
 @Component({
   selector: 'app-errand-added-dialog',

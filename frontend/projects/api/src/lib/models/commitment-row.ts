@@ -30,7 +30,7 @@ export interface CommitmentRow {
    */
   readonly endTime: string;
   /**
-   * Subtitle — "Saturdays · 9:00 to 10:00".
+   * Subtitle — "Saturdays · 09:00 to 10:00".
    */
   readonly subtitle: string;
   /**

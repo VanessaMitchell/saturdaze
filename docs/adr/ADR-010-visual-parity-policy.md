@@ -2,7 +2,7 @@
 
 **Status:** Accepted
 **Date:** 2026-09-02
-**Related:** [ADR-009](ADR-009-v2-responsive-shell.md), [docs/mocks-v2/README.md](../mocks-v2/README.md).
+**Related:** [ADR-009](ADR-009-v2-responsive-shell.md), [docs/mocks/README.md](../mocks/README.md).
 
 ## Context
 
@@ -12,9 +12,9 @@ The v2 suite keeps the idea (the mocks are the design, the app must match them) 
 
 ## Decisions
 
-### 1. Baselines come from `docs/mocks-v2`, captured by the same config
+### 1. Baselines come from `docs/mocks`, captured by the same config
 
-`npm run baseline` (`SD_BASELINE=1`) serves `docs/mocks-v2` on `:5173` and writes the snapshots; the normal run serves the Angular app on `:4200` and compares. Both use the same project names (mobile 390×844, tablet 820×1180, desktop 1440×900) so they read and write the same files. Baselines are re-captured only when an intentional design change has landed in the mocks.
+`npm run baseline` (`SD_BASELINE=1`) serves `docs/mocks` on `:5173` and writes the snapshots; the normal run serves the Angular app on `:4200` and compares. Both use the same project names (mobile 390×844, tablet 820×1180, desktop 1440×900) so they read and write the same files. Baselines are re-captured only when an intentional design change has landed in the mocks.
 
 ### 2. Three tiers of comparison
 

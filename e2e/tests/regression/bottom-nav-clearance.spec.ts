@@ -36,7 +36,7 @@ const GLOBAL_SCSS = join(
   REPO_ROOT,
   "frontend/projects/components/src/lib/styles/_global.scss",
 );
-const MOCKS_V2_CSS = join(REPO_ROOT, "docs/mocks-v2/styles/app.css");
+const MOCKS_V2_CSS = join(REPO_ROOT, "docs/mocks/styles/app.css");
 
 /**
  * The one correct clearance formula, verbatim. Both the app and the v2 mocks
@@ -126,14 +126,14 @@ test.describe("ADR-005 — bottom-nav device chrome clearance", () => {
     ).toContain(ADR005_CLEARANCE);
   });
 
-  test("docs/mocks-v2/styles/app.css carries the same clearance formula", () => {
+  test("docs/mocks/styles/app.css carries the same clearance formula", () => {
     // The mocks are the design source of truth and the e2e baseline source;
     // if their bottom-nav rule drifts, the app's regression guard is guarding
     // a rule the design no longer shows.
     const css = readFileSync(MOCKS_V2_CSS, "utf8");
     expect(
       css,
-      `docs/mocks-v2/styles/app.css lost the ADR-005 clearance rule \`${ADR005_CLEARANCE}\``,
+      `docs/mocks/styles/app.css lost the ADR-005 clearance rule \`${ADR005_CLEARANCE}\``,
     ).toContain(ADR005_CLEARANCE);
   });
 });

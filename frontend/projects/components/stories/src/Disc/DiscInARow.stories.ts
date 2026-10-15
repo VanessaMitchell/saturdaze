@@ -10,7 +10,7 @@ export const InARow: StoryObj<Disc> = {
           <sd-disc icon="ticket" tone="sun" />
           <div>
             <div style="font-weight: 600">Soccer practice</div>
-            <div style="font-size: 13px; color: var(--colorNeutralForeground2)">Saturdays · 9:00–10:30</div>
+            <div style="font-size: 13px; color: var(--colorNeutralForeground2)">Saturdays · 09:00 to 10:30</div>
           </div>
         </div>
         <div style="display: flex; gap: 12px; align-items: center">

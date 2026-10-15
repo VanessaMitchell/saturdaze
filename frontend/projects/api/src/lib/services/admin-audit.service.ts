@@ -70,14 +70,9 @@ export function utcStamp(iso: string): string {
   return `${d.getUTCFullYear()}-${p(d.getUTCMonth() + 1)}-${p(d.getUTCDate())} ${p(d.getUTCHours())}:${p(d.getUTCMinutes())} UTC`;
 }
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-/** "2026-10-06T04:12:00+00:00" → "6 Oct 2026, 04:12 UTC". */
+/** "2026-10-06T04:12:00+00:00" → "2026-10-06 04:12 UTC". */
 export function utcWhen(iso: string): string {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return '';
-  const p = (n: number) => String(n).padStart(2, '0');
-  return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}, ${p(d.getUTCHours())}:${p(d.getUTCMinutes())} UTC`;
+  return utcStamp(iso);
 }
 
 /** The one-line "what changed" of an entry, as the mock words each action (L2-122 AC4). */

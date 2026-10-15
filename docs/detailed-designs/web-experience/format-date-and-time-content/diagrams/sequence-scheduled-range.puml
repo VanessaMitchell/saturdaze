@@ -1,0 +1,30 @@
+@startuml
+title UML sequence behaviour — Render a scheduled range
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 12
+skinparam defaultFontName Arial
+skinparam ArrowColor #344054
+actor "Family member" as actor
+box "Frontend — Saturdaze family application" #E0F2FE
+participant "WeekendPage" as page
+participant "WeekendPlanService" as service
+end box
+box "Backend — Saturdaze API application" #D1FADF
+participant "WeekendsController" as controller
+end box
+box "Backend — Angular API library" #ECFDF3
+participant "weekend-projection" as projection
+participant "format.ts" as format
+end box
+actor -> page : Open Weekend
+page -> service : Load current weekend
+service -> controller : GET /api/weekends/current
+controller --> service : Weekend DTO
+service -> projection : Project blocks
+projection -> format : Apply L2-134 timeRange(start, end)
+format --> projection : HH:mm to HH:mm
+projection --> service : Block view
+service --> page : Weekend view
+page --> actor : Render unambiguous range
+@enduml

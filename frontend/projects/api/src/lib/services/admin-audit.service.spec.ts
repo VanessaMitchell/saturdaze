@@ -104,7 +104,7 @@ describe('admin audit view mapping', () => {
         },
       ],
     });
-    expect(view.meta).toBe('6 Oct 2026, 04:12 UTC · 2 photo skips');
+    expect(view.meta).toBe('2026-10-06 04:12 UTC · 2 photo skips');
     expect(view.status.label).toBe('Succeeded');
     expect(view.skips[0].placeHref).toBe('/places/LocalEvent/e1');
     expect(view.skips[1].placeHref).toBeNull();

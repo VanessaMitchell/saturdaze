@@ -71,9 +71,9 @@ From the repo root (pwsh or bash). Playwright is resolved from `e2e/node_modules
 run `npm ci` in `e2e/` once.
 
 ```powershell
-node docs/mocks-v2/.check.mjs               # static consistency, <1s, run this first
-node docs/mocks-v2/.verify.mjs              # self-serves on :5180, checks 5 widths, writes .screenshots/
-node docs/mocks-v2/.verify.mjs --capture    # + full-page PNGs into screenshots/<slug>.<viewport>.png
+node docs/mocks/.check.mjs                  # static consistency, <1s, run this first
+node docs/mocks/.verify.mjs                 # self-serves on :5180, checks 5 widths, writes .screenshots/
+node docs/mocks/.verify.mjs --capture       # + full-page PNGs into screenshots/<slug>.<viewport>.png
 ```
 
 If Chromium fails to launch: `cd e2e; npx playwright install chromium`.
@@ -82,9 +82,9 @@ To browse manually side by side with v1 (which stays on :5173):
 
 ```powershell
 cd e2e
-npx http-server ../docs/mocks-v2 -p 5180 -c-1 --cors
+npx http-server ../docs/mocks -p 5180 -c-1 --cors
 # reuse that server for the verifier:
-$env:SD_MOCKS_URL = "http://localhost:5180"; node ..\docs\mocks-v2\.verify.mjs
+$env:SD_MOCKS_URL = "http://localhost:5180"; node ..\docs\mocks\.verify.mjs
 ```
 
 `-c-1` disables http-server caching. Pages also open directly from `file://`

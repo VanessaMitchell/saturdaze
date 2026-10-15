@@ -51,7 +51,7 @@ const VIEW: IdeasFoodView = {
   sections: [
     {
       title: 'Lunch',
-      subtitle: 'Near Terre Bleu · 12:00 to 1:30pm',
+      subtitle: 'Near Terre Bleu · 12:00 to 13:30',
       day: 'Saturday',
       slot: 'Lunch',
       lockedId: null,
@@ -131,7 +131,7 @@ describe('IdeasFoodPage', () => {
     const section = host.querySelector('sd-section');
     expect(section?.querySelector('.section-header__title')?.textContent?.trim()).toBe('Lunch');
     expect(section?.querySelector('.section-header__sub')?.textContent?.trim()).toBe(
-      'Near Terre Bleu · 12:00 to 1:30pm',
+      'Near Terre Bleu · 12:00 to 13:30',
     );
     expect(headChip('La Marina')).toBe('Top pick');
     expect(card('La Marina').classList.contains('card--span')).toBe(true);

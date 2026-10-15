@@ -6,7 +6,7 @@ import { Disc, List, ListItem } from 'components';
   imports: [Disc, ListItem],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <sd-list-item title="Swim lessons" subtitle="Saturdays · 9:00 to 10:00" chevron action>
+    <sd-list-item title="Swim lessons" subtitle="Saturdays · 09:00 to 10:00" chevron action>
       <sd-disc slot="leading" icon="lock" tone="accent" />
     </sd-list-item>
   `,

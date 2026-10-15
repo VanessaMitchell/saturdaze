@@ -23,8 +23,8 @@ const ERRAND_BLOCK: BlockRow = {
   refId: 'e-costco',
   day: 'Sunday',
   kind: 'Errand',
-  time: '9:15',
-  timeRange: '9:15 to 10:00',
+  time: '09:15',
+  timeRange: '09:15 to 10:00',
   title: 'Costco run',
   subtitle: 'Paper towels, bread, yogurt',
   reason: null,
@@ -67,7 +67,7 @@ const READY: WeekendView = {
       weather: { day: 'Saturday', icon: 'sun', hi: '22', lo: '14', note: 'Light breeze' },
       meta: '16 May · 22° / 14° · Light breeze',
       locked: false,
-      keeping: ['Swim 9:00'],
+      keeping: ['Swim 09:00'],
       blocks: [BLOCK_COMMITMENT, BLOCK],
       stops: [],
       home: null,
@@ -389,7 +389,7 @@ describe('WeekendPage', () => {
     expect(confirmData()).toMatchObject({
       title: 'Regenerate the weekend?',
       body: 'Locked blocks stay where they are.',
-      well: { title: 'Keeping', body: 'Swim 9:00 · Church 10:30' },
+      well: { title: 'Keeping', body: 'Swim 09:00 · Church 10:30' },
       confirmLabel: 'Regenerate',
     });
     expect(weekend.regenerate).toHaveBeenCalledTimes(1);
@@ -410,7 +410,7 @@ describe('WeekendPage', () => {
     expect(confirmData()).toMatchObject({
       title: 'Regenerate Saturday?',
       body: 'Sunday will not change.',
-      well: { title: 'Keeping on Saturday', body: 'Swim 9:00' },
+      well: { title: 'Keeping on Saturday', body: 'Swim 09:00' },
       confirmLabel: 'Regenerate Saturday',
     });
     expect(weekend.regenerateDay).toHaveBeenCalledWith('Saturday');
@@ -458,7 +458,7 @@ describe('WeekendPage', () => {
     const placement = {
       description: 'Costco run',
       day: 'Sunday',
-      time: '9:15',
+      time: '09:15',
       endTime: '10:00',
       blockId: 'b-new',
     };

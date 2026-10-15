@@ -7,7 +7,7 @@ export const Regenerate: StoryObj = {
   render: () => ({
     template: specimen(`
       <sd-dialog static title="Regenerate the weekend?" subtitle="Locked blocks stay where they are.">
-        <sd-well icon="lock" tone="accent" title="Keeping">Swim 9:00 · Church 10:30 · Workout 5:00 · Bath and books 8:00</sd-well>
+        <sd-well icon="lock" tone="accent" title="Keeping">Swim 09:00 · Church 10:30 · Workout 17:00 · Bath and books 20:00</sd-well>
         <sd-button slot="actions" variant="quiet">Cancel</sd-button>
         <sd-button slot="actions" variant="primary"><sd-icon name="refresh" />Regenerate</sd-button>
       </sd-dialog>

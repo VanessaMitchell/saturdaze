@@ -111,7 +111,7 @@ describe('EventSubmissionsService', () => {
       state: 'pending',
       title: 'Port Credit Buskerfest',
       tile: { day: '20', mon: 'Jun' },
-      when: 'Sat 20 Jun · 2:00 to 9:00pm',
+      when: 'Sat 20 Jun · 14:00 to 21:00',
       location: 'Memorial Park, Lakeshore Rd',
       cost: 'Free',
       ages: 'All ages',
@@ -124,7 +124,7 @@ describe('EventSubmissionsService', () => {
     const sparse = toSubmissionCard(OLDER, 'approved', now);
     expect(sparse).toMatchObject({
       state: 'approved',
-      when: 'Sat 6 Jun · 10:00am to 2:00pm',
+      when: 'Sat 6 Jun · 10:00 to 14:00',
       location: null,
       cost: null,
       ages: null,
@@ -134,13 +134,16 @@ describe('EventSubmissionsService', () => {
     });
   });
 
+  // Acceptance Test
+  // Traces to: L2-134
+  // Description: Multi-day event times keep each date separate from its local clock.
   it('writes the when line for open-ended and multi-day submissions', () => {
-    expect(submissionWhen(submission({ endsAtLocal: null }))).toBe('Sat 20 Jun · 2:00pm');
+    expect(submissionWhen(submission({ endsAtLocal: null }))).toBe('Sat 20 Jun · 14:00');
     expect(
       submissionWhen(
         submission({ startsAtLocal: '2026-06-20T09:30', endsAtLocal: '2026-06-21T16:00' }),
       ),
-    ).toBe('Sat 20 Jun 9:30am to Sun 21 Jun 4:00pm');
+    ).toBe('Sat 20 Jun · 09:30 to Sun 21 Jun · 16:00');
   });
 
   it('approves a card in place and keeps it out of pending', async () => {

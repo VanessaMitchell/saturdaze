@@ -11,7 +11,7 @@ export interface FoodSection {
    */
   readonly title: MealSlot;
   /**
-   * Subtitle — "Near Terre Bleu · 12:00 to 1:30pm" or "Close to home".
+   * Subtitle — "Near Terre Bleu · 12:00 to 13:30" or "Close to home".
    */
   readonly subtitle: string;
   /**

@@ -8,7 +8,7 @@
 
 ### Content
 
-- Every row needs a title; keep subtitles to one short line ("Kid · 9", "Saturdays · 9:00 to 10:00").
+- Every row needs a title; keep subtitles to one short line ("Kid · 9", "Saturdays · 09:00 to 10:00").
 - Order by what the family thinks of first — parents then kids, commitments by day and time.
 
 ### Accessibility

@@ -30,14 +30,14 @@ const HIGHLIGHT: ChipFixture = { tone: 'primary', label: 'Day highlight' };
 
 export const SATURDAY: readonly BlockFixture[] = [
   {
-    time: '8:30',
+    time: '08:30',
     duration: '30m',
     icon: 'home',
     title: 'Breakfast at home',
     subtitle: "Cereal day, Eli's choice",
   },
   {
-    time: '9:00',
+    time: '09:00',
     duration: '60m',
     icon: 'bike',
     title: 'Swim lessons',
@@ -98,14 +98,14 @@ export const SATURDAY: readonly BlockFixture[] = [
 
 export const SUNDAY: readonly BlockFixture[] = [
   {
-    time: '8:30',
+    time: '08:30',
     duration: '45m',
     icon: 'home',
     title: 'Pancakes at home',
     subtitle: 'Mae flips, Eli pours',
   },
   {
-    time: '9:15',
+    time: '09:15',
     duration: '45m',
     icon: 'bag',
     title: 'Costco run',

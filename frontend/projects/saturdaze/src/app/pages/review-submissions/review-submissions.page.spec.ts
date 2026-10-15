@@ -23,7 +23,7 @@ const READY: ReviewView = {
       ...SUBMISSION_CARD,
       id: 's-market',
       title: 'Farmers Market',
-      when: 'Sun 21 Jun · 9:00 to 1:00',
+      when: 'Sun 21 Jun · 09:00 to 13:00',
       location: null,
       cost: null,
       ages: null,
@@ -118,7 +118,7 @@ describe('ReviewSubmissionsPage', () => {
     ]);
     const first = cards()[0]!;
     expect(first.querySelector('.card__meta')?.textContent?.trim()).toBe(
-      'Sat 20 Jun · 2:00 to 9:00pm',
+      'Sat 20 Jun · 14:00 to 21:00',
     );
     expect(first.querySelector('sd-chip')?.textContent?.trim()).toBe('Pending');
     // The avatar is drawn from the submitter's email: its initial, uppercased.

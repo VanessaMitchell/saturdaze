@@ -3,7 +3,7 @@ import { Injectable, Signal, computed, inject, signal } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
 import { API_BASE_URL } from '../api/api-base-url';
-import { capitalise, clock12, initialOf, numberWord, timeAgo, timeRange } from '../api/format';
+import { capitalise, hhmm, initialOf, numberWord, timeAgo, timeRange } from '../api/format';
 import { formatEventDate, monthAbbr, parseIsoDate } from '../api/weekend-dates';
 import { DateTile } from '../models/date-tile';
 import { ApprovalLocation } from '../models/approval-location';
@@ -29,17 +29,17 @@ function tileFor(dateIso: string): DateTile {
 }
 
 /**
- * "Sat 20 Jun · 2:00 to 9:00pm" — or "Sat 20 Jun · 2:00pm" without an end,
+ * "Sat 20 Jun · 14:00 to 21:00" — or "Sat 20 Jun · 14:00" without an end,
  * and both dates when the event ends on another day.
  */
 export function submissionWhen(dto: EventSubmissionDto): string {
   const startDate = dto.startsAtLocal.substring(0, 10);
   const startTime = dto.startsAtLocal.substring(11, 16) || '00:00';
-  if (!dto.endsAtLocal) return `${formatEventDate(startDate)} · ${clock12(startTime)}`;
+  if (!dto.endsAtLocal) return `${formatEventDate(startDate)} · ${hhmm(startTime)}`;
   const endDate = dto.endsAtLocal.substring(0, 10);
   const endTime = dto.endsAtLocal.substring(11, 16) || '00:00';
   if (endDate !== startDate) {
-    return `${formatEventDate(startDate)} ${clock12(startTime)} to ${formatEventDate(endDate)} ${clock12(endTime)}`;
+    return `${formatEventDate(startDate)} · ${hhmm(startTime)} to ${formatEventDate(endDate)} · ${hhmm(endTime)}`;
   }
   return `${formatEventDate(startDate)} · ${timeRange(startTime, endTime)}`;
 }

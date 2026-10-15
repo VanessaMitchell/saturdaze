@@ -8,7 +8,7 @@ import { PageSlug } from "../fixtures/routes.js";
  *   .page-header "The Browns" + home subtitle
  *   .family-grid (1 col; 1.2fr 1fr ≥1024)
  *     Who's in              ul.list--card > a.list__item--action (avatar · name · "Parent · 38" / "Kid · 9") + .ghost-row "Add a family member"
- *     Locked in every weekend  a.list__item--action (disc · title · "Saturdays · 9:00 to 10:00") + .ghost-row "Add a commitment"
+ *     Locked in every weekend  a.list__item--action (disc · title · "Saturdays · 09:00 to 10:00") + .ghost-row "Add a commitment"
  *     Home                  [Edit] · li.list__item (home location)
  *     Likes and dislikes    [Edit] · .cluster > .chip--leaf (likes) / .chip--warn (dislikes)
  *     Preferences           li.list__item + label.toggle > input.toggle__input[role=switch]

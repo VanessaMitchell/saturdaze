@@ -6,7 +6,7 @@
  *   that the mocks render as separate files or `#state-*` specimens are
  *   reached through the dev-only `?state=` override (gated on
  *   `environment.galleryRoutes`, compile-time false in production).
- * - The mocks (`docs/mocks-v2/pages/`) use `./pages/<name>.html`, with a
+ * - The mocks (`docs/mocks/pages/`) use `./pages/<name>.html`, with a
  *   `#state-<id>` fragment for the stacked auth states.
  * - `guard` records which session a route needs in the Angular app, so the
  *   `goto` fixture can sign in automatically. Mock pages have no auth.
@@ -116,7 +116,7 @@ export function pathFor(key: RouteKey): string {
   if (!isBaseline()) return entry.app;
   if (entry.mock === undefined) {
     throw new Error(
-      `Route "${key}" is app-only (no docs/mocks-v2 page) and cannot be visited in baseline mode.`,
+      `Route "${key}" is app-only (no docs/mocks page) and cannot be visited in baseline mode.`,
     );
   }
   return entry.mock;

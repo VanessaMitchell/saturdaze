@@ -58,7 +58,7 @@ describe('ConfirmDialog', () => {
           useValue: {
             title: 'Sign out?',
             cancelLabel: 'Stay signed in',
-            well: { icon: 'lock', tone: 'accent', title: 'Keeping', body: 'Swim 9:00' },
+            well: { icon: 'lock', tone: 'accent', title: 'Keeping', body: 'Swim 09:00' },
           },
         },
       ],
@@ -69,7 +69,7 @@ describe('ConfirmDialog', () => {
     const well = el.querySelector('sd-well');
     expect(well?.querySelector('.well__title')?.textContent?.trim()).toBe('Keeping');
     expect(well?.classList.contains('well--accent')).toBe(true);
-    expect(well?.querySelector('.well__body')?.textContent).toContain('Swim 9:00');
+    expect(well?.querySelector('.well__body')?.textContent).toContain('Swim 09:00');
     const buttons = Array.from(el.querySelectorAll('sd-button[slot="actions"] .btn'));
     expect(buttons[0]!.textContent?.trim()).toBe('Stay signed in');
     expect(buttons[1]!.classList.contains('btn--primary')).toBe(true);

@@ -10,7 +10,7 @@ export const Errand: StoryObj<Block> = {
       props: { done, toggle: () => done.update((v) => !v) },
       template: `
         <div role="list" style="max-width: 560px">
-          <sd-block errand [done]="done()" time="9:30" duration="45m" icon="bag" title="Costco run" subtitle="Paper towels, bread, yogurt">
+          <sd-block errand [done]="done()" time="09:30" duration="45m" icon="bag" title="Costco run" subtitle="Paper towels, bread, yogurt">
             <sd-chip slot="chips" tone="indoor">Errand</sd-chip>
             <sd-button
               slot="actions"

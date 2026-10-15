@@ -28,11 +28,11 @@ export interface BlockRow {
    */
   readonly refId: string | null;
   /**
-   * Time — the 24-hour clock shown in the rail, "9:00" / "17:00".
+   * Time — the zero-padded 24-hour clock shown in the rail, "09:00" / "17:00".
    */
   readonly time: string;
   /**
-   * Time Range — "11:00am to 1:00pm" / "5:00 to 6:00pm" for dialogs.
+   * Time Range — "11:00 to 13:00" / "17:00 to 18:00" for dialogs.
    */
   readonly timeRange: string;
   /**

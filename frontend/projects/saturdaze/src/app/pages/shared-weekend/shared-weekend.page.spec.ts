@@ -26,7 +26,7 @@ const READY: WeekendView = {
       weather: { day: 'Saturday', icon: 'sun', hi: '22', lo: '14', note: 'Light breeze' },
       meta: '16 May · 22° / 14° · Light breeze',
       locked: false,
-      keeping: ['Swim 9:00'],
+      keeping: ['Swim 09:00'],
       blocks: [BLOCK_COMMITMENT, BLOCK],
       stops: [],
       home: null,

@@ -62,7 +62,7 @@ const VIEW: FamilyView = {
       dayLabel: 'Saturdays',
       startTime: '09:00',
       endTime: '10:00',
-      subtitle: 'Saturdays · 9:00 to 10:00',
+      subtitle: 'Saturdays · 09:00 to 10:00',
       icon: 'bike',
     },
     {
@@ -72,7 +72,7 @@ const VIEW: FamilyView = {
       dayLabel: 'Wednesdays',
       startTime: '16:00',
       endTime: '17:00',
-      subtitle: 'Wednesdays · 4:00 to 5:00',
+      subtitle: 'Wednesdays · 16:00 to 17:00',
       icon: 'sparkle',
     },
   ],

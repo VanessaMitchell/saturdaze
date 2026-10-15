@@ -61,7 +61,7 @@ test.describe("Dialogs gallery", () => {
       ["share", "Share this weekend"],
       ["calendar", "Add to your calendar"],
       ["errand", "Add an errand"],
-      ["errand-added", "Added to Sunday at 9:15"],
+      ["errand-added", "Added to Sunday at 09:15"],
       ["suggest", "Suggest an event"],
       ["submitted", "Thanks, it is in the queue"],
       ["lock-in", "Lock La Marina for Saturday lunch?"],
@@ -90,6 +90,16 @@ test.describe("Dialogs gallery", () => {
     for (const [slug, title] of expected) {
       await expect(d.title(slug), `#dialog-${slug}`).toHaveText(new RegExp(`^${title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`));
     }
+  });
+
+  // Acceptance Test
+  // Traces to: L2-134
+  // Description: Dialog schedule subtitles use the documented 24-hour range.
+  test("schedule subtitles use one zero-padded 24-hour range", async ({ pages }) => {
+    const d = pages.dialogs;
+    await expect(d.subtitle("block")).toHaveText("Saturday 11:00 to 13:00 · 45 min drive");
+    await expect(d.subtitle("block-locked")).toHaveText("Saturday 20:00 to 21:00 · Lights out at 21:00");
+    await expect(d.subtitle("block-commitment")).toHaveText("Saturday 09:00 to 10:00 · Port Credit Pool");
   });
 
   test("danger fill is reserved for Replace draft, Remove, Sign out and Reject", async ({ pages }) => {

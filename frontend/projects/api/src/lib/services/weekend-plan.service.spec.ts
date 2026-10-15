@@ -249,7 +249,7 @@ describe('WeekendPlanService', () => {
       await expect(promise).resolves.toEqual({
         description: 'Milk run',
         day: 'Sunday',
-        time: '9:15',
+        time: '09:15',
         endTime: '10:00',
         blockId: 'e2',
       });

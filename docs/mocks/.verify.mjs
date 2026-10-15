@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// docs/mocks-v2/.verify.mjs — renders every v2 mock page in Chromium at five
+// docs/mocks/.verify.mjs — renders every v2 mock page in Chromium at five
 // widths (320 / 390 / 820 / 1440 / 1920) and, per page x width, requires:
 //   1. a 2xx document and no failed or >= 400 subresource
 //   2. the `expects` text to be present
@@ -19,10 +19,10 @@
 // frozen also land in ./screenshots/<slug>.<viewport>.png (index: desktop
 // only).
 //
-//   node docs/mocks-v2/.verify.mjs               # serves docs/mocks-v2 on :5180
-//   node docs/mocks-v2/.verify.mjs --capture     # + full-page captures
-//   SD_MOCKS_PORT=5175 node docs/mocks-v2/.verify.mjs
-//   SD_MOCKS_URL=http://localhost:5173 node docs/mocks-v2/.verify.mjs   # no built-in server
+//   node docs/mocks/.verify.mjs               # serves docs/mocks on :5180
+//   node docs/mocks/.verify.mjs --capture     # + full-page captures
+//   SD_MOCKS_PORT=5175 node docs/mocks/.verify.mjs
+//   SD_MOCKS_URL=http://localhost:5173 node docs/mocks/.verify.mjs   # no built-in server
 //
 // Playwright is resolved from e2e/node_modules (nothing is installed above docs/).
 
@@ -38,7 +38,7 @@ const require = createRequire(new URL("../../e2e/package.json", import.meta.url)
 // ---------------------------------------------------------------- pages
 //
 // Row fields:
-//   url      path served from docs/mocks-v2 ("/" = index.html)
+//   url      path served from docs/mocks ("/" = index.html)
 //   shell    "app" (default) or "bare"
 //   nav      data-nav of the link that must carry aria-current="page"
 //            (null = no link is current; omit = don't check)
@@ -103,7 +103,7 @@ const PAGE_TIMEOUT = 10_000;
 const MAX_OFFENDERS_SHOWN = 5;
 const ADR005_RULE = "max(env(safe-area-inset-bottom, 0px), var(--sd-chrome-bottom, 0px))";
 
-const ROOT = dirname(fileURLToPath(import.meta.url)); // docs/mocks-v2
+const ROOT = dirname(fileURLToPath(import.meta.url)); // docs/mocks
 const REPO = resolve(ROOT, "..", "..");
 const SHOT_DIR = join(ROOT, ".screenshots");
 const CAPTURE_DIR = join(ROOT, "screenshots");

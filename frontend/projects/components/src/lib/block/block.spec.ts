@@ -28,7 +28,7 @@ describe('Block', () => {
     await TestBed.configureTestingModule({ imports: [Block, HostCmp] }).compileComponents();
     fixture = TestBed.createComponent(Block);
     fixture.componentRef.setInput('title', 'Breakfast at home');
-    fixture.componentRef.setInput('time', '8:00');
+    fixture.componentRef.setInput('time', '08:00');
     fixture.detectChanges();
     host = fixture.nativeElement as HTMLElement;
   });
@@ -37,7 +37,7 @@ describe('Block', () => {
     expect(fixture.componentInstance).toBeTruthy();
     expect(host.classList.contains('block')).toBe(true);
     expect(host.getAttribute('role')).toBe('listitem');
-    expect(host.querySelector('.block__time .block__clock')?.textContent?.trim()).toBe('8:00');
+    expect(host.querySelector('.block__time .block__clock')?.textContent?.trim()).toBe('08:00');
     expect(host.querySelector('.block__dur')).toBeNull();
     expect(host.querySelector('.block__rail .block__disc sd-icon')).not.toBeNull();
     expect(glyph(discIcon())).toContain('M12 3l1.7 5.3L19 10l-5.3 1.7L12 17');

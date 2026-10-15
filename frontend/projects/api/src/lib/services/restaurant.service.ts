@@ -144,7 +144,7 @@ function slotOf(block: BlockRow): MealSlot | null {
 }
 
 /**
- * "Near Terre Bleu · 12:00 to 1:30pm" when the weekend already has a meal
+ * "Near Terre Bleu · 12:00 to 13:30" when the weekend already has a meal
  * block for the day and slot, else "Close to home".
  */
 function sectionSubtitle(weekend: WeekendView, day: WeekendDay, slot: MealSlot): string {

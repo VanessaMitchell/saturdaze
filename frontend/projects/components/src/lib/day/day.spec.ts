@@ -9,7 +9,7 @@ import { Day } from './day';
   imports: [Day, Block],
   template: `
     <sd-day title="Saturday" weather="sun">
-      <sd-block title="Breakfast" time="8:00" />
+      <sd-block title="Breakfast" time="08:00" />
       <sd-block title="Park" time="10:00" />
       <sd-block title="Dinner" time="18:00" />
       <button slot="footer" class="add">Add an errand</button>

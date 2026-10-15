@@ -19,7 +19,7 @@ export const States: StoryObj<Card> = {
         </sd-card>
         <sd-card muted>
           <strong>Port Credit Buskerfest</strong>
-          <span class="sd-text-sm sd-text-soft">Lakeshore Rd · Sat 2pm to 9pm</span>
+          <span class="sd-text-sm sd-text-soft">Lakeshore Rd · Sat 14:00 to 21:00</span>
           <div class="sd-cluster"><sd-chip tone="sun">Pending review</sd-chip></div>
         </sd-card>
       </div>

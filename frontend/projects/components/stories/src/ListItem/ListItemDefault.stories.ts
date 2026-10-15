@@ -5,7 +5,7 @@ import type { ListItem } from 'components';
 export const Default: StoryObj<ListItem & { title: string }> = {
   args: {
     title: 'Swim lessons',
-    subtitle: 'Saturdays · 9:00 to 10:00',
+    subtitle: 'Saturdays · 09:00 to 10:00',
     subtitleFirst: false,
     chevron: true,
     action: true,

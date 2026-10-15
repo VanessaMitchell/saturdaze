@@ -13,7 +13,7 @@ export const Default: StoryObj<Dialog & { title: string }> = {
     props: args,
     template: `
       <sd-dialog static [title]="title" [subtitle]="subtitle" [wide]="wide" [closeLabel]="closeLabel">
-        <sd-well icon="lock" tone="accent" title="Keeping on Saturday">Swim 9:00 · Workout 5:00 · Bath and books 8:00</sd-well>
+        <sd-well icon="lock" tone="accent" title="Keeping on Saturday">Swim 09:00 · Workout 17:00 · Bath and books 20:00</sd-well>
         <sd-button slot="actions" variant="quiet" type="button">Cancel</sd-button>
         <sd-button slot="actions" variant="primary" type="button"><sd-icon name="refresh" />Regenerate</sd-button>
       </sd-dialog>

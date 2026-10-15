@@ -35,7 +35,7 @@ export const LANDING_SAMPLE: readonly SampleDay[] = [
     weather: 'sun',
     blocks: [
       {
-        time: '9:00',
+        time: '09:00',
         duration: '60m',
         icon: 'bike',
         title: 'Swim lessons',
@@ -63,14 +63,14 @@ export const LANDING_SAMPLE: readonly SampleDay[] = [
     weather: 'cloud',
     blocks: [
       {
-        time: '8:30',
+        time: '08:30',
         duration: '45m',
         icon: 'home',
         title: 'Pancakes at home',
         subtitle: 'Mae flips, Eli pours',
       },
       {
-        time: '9:15',
+        time: '09:15',
         duration: '45m',
         icon: 'bag',
         title: 'Costco run',

@@ -13,7 +13,7 @@ import { Block, Chip, Day, GhostRow, Icon } from 'components';
       weather="sun"
     >
       <sd-block
-        time="8:30"
+        time="08:30"
         duration="30m"
         icon="home"
         title="Breakfast at home"
@@ -21,7 +21,7 @@ import { Block, Chip, Day, GhostRow, Icon } from 'components';
       />
       <sd-block
         commitment
-        time="9:00"
+        time="09:00"
         duration="60m"
         icon="bike"
         title="Swim lessons"

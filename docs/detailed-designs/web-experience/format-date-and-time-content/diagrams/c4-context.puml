@@ -1,0 +1,10 @@
+@startuml
+!include <C4/C4_Context>
+LAYOUT_WITH_LEGEND()
+title System context — Format date and time content
+Person(member, "Family member", "Reads local weekend and discovery times")
+Person(admin, "Administrator", "Reads UTC audit and ingestion times")
+System(saturdaze, "Saturdaze", "Family weekend planner and administration application")
+Rel(member, saturdaze, "Reads scheduled local times using", "HTTPS")
+Rel(admin, saturdaze, "Reads administrative UTC timestamps using", "HTTPS")
+@enduml

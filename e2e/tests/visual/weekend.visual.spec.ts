@@ -38,7 +38,7 @@ test.describe("Visual: Weekend", () => {
     });
   });
 
-  test("commitment block (Swim lessons, seeded Saturday 9:00)", async ({ pages }) => {
+  test("commitment block (Swim lessons, seeded Saturday 09:00)", async ({ pages }) => {
     const w = pages.weekend;
     const block = w.block("Swim lessons", "Saturday");
     await expect(block).toHaveScreenshot("weekend.block.commitment.png", {

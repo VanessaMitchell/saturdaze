@@ -33,7 +33,7 @@ export interface DayView {
    */
   readonly locked: boolean;
   /**
-   * Keeping — "Swim 9:00" entries for the regenerate confirmation well.
+   * Keeping — "Swim 09:00" entries for the regenerate confirmation well.
    */
   readonly keeping: readonly string[];
   /**

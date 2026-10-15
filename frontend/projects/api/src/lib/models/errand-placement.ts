@@ -11,7 +11,7 @@ export interface ErrandPlacement {
    */
   readonly day: WeekendDay;
   /**
-   * Time — "9:15".
+   * Time — "09:15".
    */
   readonly time: string;
   /**

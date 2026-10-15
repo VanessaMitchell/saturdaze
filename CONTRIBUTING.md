@@ -45,7 +45,7 @@ dotnet restore .\Saturdaze.sln
 | `frontend/` | Angular app plus `api` and `components` libraries |
 | `e2e/` | Playwright behavior and visual tests |
 | `design-system/` | Standalone design-system catalog (own `npm test`, own SWA deployment) |
-| `docs/mocks-v2/` | Static HTML/CSS design — the source of truth for the app and the visual baselines |
+| `docs/mocks/` | Static HTML/CSS design — the source of truth for the app and the visual baselines |
 | `docs/adr/` | Architecture decision records |
 | `eng/` | Local engineering automation scripts |
 
@@ -58,9 +58,9 @@ dotnet restore .\Saturdaze.sln
 - Keep seed data idempotent and safe to rerun.
 - Keep Angular component hosts and inner elements on the mocks' BEM class
   names (ADR-009); the e2e page objects locate by them.
-- Keep visual changes consistent with `docs/mocks-v2/` unless the pull request
+- Keep visual changes consistent with `docs/mocks/` unless the pull request
   is intentionally updating the design — then change the mock first, run
-  `node docs/mocks-v2/.check.mjs`, and re-capture baselines (`npm run baseline`
+  `node docs/mocks/.check.mjs`, and re-capture baselines (`npm run baseline`
   in `e2e/`).
 - Frontend code is formatted with Prettier and linted with angular-eslint.
   The husky pre-commit hook (installed by `npm ci` in `frontend/`) fixes

@@ -4,7 +4,7 @@ import { test, expect, isPhone } from "../fixtures/sd-test.js";
  * Weekend behaviour against the seeded Brown family (API on :5100).
  *
  * The planner output is non-deterministic, so assertions target structure
- * and the seeded anchors (Swim lessons Sat 9:00, Church Sun 10:30, Workout
+ * and the seeded anchors (Swim lessons Sat 09:00, Church Sun 10:30, Workout
  * window Sat 17:00) rather than specific planner picks.
  */
 
@@ -40,7 +40,7 @@ test.describe("Weekend", () => {
     const w = pages.weekend;
     const swim = w.block("Swim lessons", "Saturday");
     await expect(swim).toHaveClass(/block--commitment/);
-    await expect(w.blockClock(swim)).toHaveText("9:00");
+    await expect(w.blockClock(swim)).toHaveText("09:00");
     await expect(w.blockChips(swim).first()).toContainText("Commitment");
     await expect(w.whyButton("Swim lessons", "Saturday")).toHaveAttribute("aria-label", "About Swim lessons");
     await expect(w.swapButton("Swim lessons", "Saturday")).toHaveCount(0);

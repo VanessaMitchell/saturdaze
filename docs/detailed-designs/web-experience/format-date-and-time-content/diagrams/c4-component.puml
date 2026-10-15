@@ -1,0 +1,16 @@
+@startuml
+!include <C4/C4_Component>
+LAYOUT_WITH_LEGEND()
+title Components — Format date and time content
+Container_Boundary(apiLibrary, "Angular API library") {
+  Component(format, "format.ts", "TypeScript module", "Formats local clocks and ranges")
+  Component(family, "family-presentation.ts", "TypeScript module", "Projects commitment labels")
+  Component(weekend, "weekend-projection.ts", "TypeScript module", "Projects itinerary blocks")
+  Component(events, "event-submissions.service.ts", "Angular service", "Projects event subtitles")
+  Component(audit, "admin-audit.service.ts", "Angular service", "Projects UTC timestamps")
+}
+Rel(family, format, "Formats commitments with")
+Rel(weekend, format, "Formats blocks with")
+Rel(events, format, "Formats event times with")
+Rel(audit, format, "Uses UTC convention from")
+@enduml

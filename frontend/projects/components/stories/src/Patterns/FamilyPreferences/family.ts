@@ -26,9 +26,9 @@ export const FAMILY_PAGE = `
 
       <sd-section title="Locked in every weekend" subtitle="Anchors. The plan goes around them.">
         <sd-list card>
-          <sd-list-item action chevron title="Swim lessons" subtitle="Saturdays · 9:00 to 10:00"><sd-disc slot="leading" icon="bike" tone="accent" /></sd-list-item>
+          <sd-list-item action chevron title="Swim lessons" subtitle="Saturdays · 09:00 to 10:00"><sd-disc slot="leading" icon="bike" tone="accent" /></sd-list-item>
           <sd-list-item action chevron title="Church" subtitle="Sundays · 10:30 to 11:45"><sd-disc slot="leading" icon="pin" tone="accent" /></sd-list-item>
-          <sd-list-item action chevron title="Workout window" subtitle="Saturdays · 5:00 to 6:00pm"><sd-disc slot="leading" icon="bike" tone="accent" /></sd-list-item>
+          <sd-list-item action chevron title="Workout window" subtitle="Saturdays · 17:00 to 18:00"><sd-disc slot="leading" icon="bike" tone="accent" /></sd-list-item>
         </sd-list>
         <sd-ghost-row icon="plus">Add a commitment</sd-ghost-row>
       </sd-section>

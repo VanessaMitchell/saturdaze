@@ -7,7 +7,7 @@
 
 ### Content
 
-- Titles are the thing itself ("Swim lessons", "Mae"); subtitles are the detail ("Saturdays · 9:00 to 10:00", "Kid · 5").
+- Titles are the thing itself ("Swim lessons", "Mae"); subtitles are the detail ("Saturdays · 09:00 to 10:00", "Kid · 5").
 - Use `subtitleFirst` for settings-style rows where a small label sits over the value.
 
 ### Accessibility

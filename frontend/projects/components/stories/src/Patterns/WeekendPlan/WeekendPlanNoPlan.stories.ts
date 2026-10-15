@@ -25,7 +25,7 @@ export const NoPlan: StoryObj = {
               <sd-list-item title="The Browns, Port Credit" subtitle="2 parents · Eli 9 · Mae 5" href="/family" chevron>
                 <sd-disc slot="leading" icon="user" />
               </sd-list-item>
-              <sd-list-item title="3 commitments" subtitle="Swim Sat 9:00 · Church Sun 10:30 · Workout 5:00" href="/family" chevron>
+              <sd-list-item title="3 commitments" subtitle="Swim Sat 09:00 · Church Sun 10:30 · Workout 17:00" href="/family" chevron>
                 <sd-disc slot="leading" icon="lock" tone="accent" />
               </sd-list-item>
               <sd-list-item title="Likes parks and theatre" subtitle="No camping · drives under 60 min" href="/family" chevron>

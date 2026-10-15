@@ -1,0 +1,27 @@
+@startuml
+title UML sequence behaviour — Render an administrative timestamp
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 12
+skinparam defaultFontName Arial
+skinparam ArrowColor #344054
+actor "Administrator" as actor
+box "Frontend — Saturdaze administration application" #E0F2FE
+participant "ActivityLogPage" as page
+participant "AdminAuditService" as service
+end box
+box "Backend — Saturdaze API application" #D1FADF
+participant "AdminPhotosController" as controller
+end box
+box "Backend — Angular API library" #ECFDF3
+participant "utcStamp" as formatter
+end box
+actor -> page : Open activity log
+page -> service : Load audit entries
+service -> controller : GET /api/admin/photo-audit
+controller --> service : Audit DTO
+service -> formatter : Apply L2-134 utcStamp(occurredAt)
+formatter --> service : YYYY-MM-DD HH:mm UTC
+service --> page : Audit row
+page --> actor : Render UTC timestamp
+@enduml

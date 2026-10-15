@@ -1,0 +1,16 @@
+@startuml
+!include <C4/C4_Container>
+LAYOUT_WITH_LEGEND()
+title Containers — Format date and time content
+Person(member, "Family member", "Reads weekend and discovery times")
+Person(admin, "Administrator", "Reads audit times")
+System_Boundary(saturdaze, "Saturdaze") {
+  Container(familyApp, "Family application", "Angular", "Renders schedule and discovery content")
+  Container(adminApp, "Administration application", "Angular", "Renders audit and ingestion content")
+  Container(api, "Saturdaze API", "ASP.NET Core", "Supplies family, event, and audit data")
+}
+Rel(member, familyApp, "Uses", "HTTPS")
+Rel(admin, adminApp, "Uses", "HTTPS")
+Rel(familyApp, api, "Reads typed data", "JSON/HTTPS")
+Rel(adminApp, api, "Reads typed data", "JSON/HTTPS")
+@enduml

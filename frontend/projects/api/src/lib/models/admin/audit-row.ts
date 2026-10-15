@@ -30,7 +30,7 @@ export interface IngestionRunSkipsView {
   readonly runId: string;
   /** "Events". */
   readonly type: string;
-  /** "6 Oct 2026, 04:12 UTC · 2 photo skips". */
+  /** "2026-10-06 04:12 UTC · 2 photo skips". */
   readonly meta: string;
   readonly status: ChipView;
   readonly skips: readonly {

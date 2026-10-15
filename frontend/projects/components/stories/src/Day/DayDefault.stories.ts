@@ -23,8 +23,8 @@ export const Default: StoryObj<Day & { title: string }> = {
         [actions]="actions"
         [busy]="busy"
       >
-        <sd-block time="8:30" duration="30m" icon="home" title="Breakfast at home" subtitle="Cereal day, Eli's choice" />
-        <sd-block commitment time="9:00" duration="60m" icon="bike" title="Swim lessons" subtitle="Every Saturday · locked in">
+        <sd-block time="08:30" duration="30m" icon="home" title="Breakfast at home" subtitle="Cereal day, Eli's choice" />
+        <sd-block commitment time="09:00" duration="60m" icon="bike" title="Swim lessons" subtitle="Every Saturday · locked in">
           <sd-chip slot="chips" tone="accent"><sd-icon name="lock" [size]="13" [stroke]="2" />Commitment</sd-chip>
         </sd-block>
         <sd-block drive time="10:30" duration="45m" icon="car" title="Drive to Terre Bleu" />
